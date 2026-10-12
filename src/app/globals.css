@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
+/* =====================================================
+   DevVault Design System
+===================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand */
+  --primary: #7C3AED;
+  --primary-hover: #8B5CF6;
+  --primary-active: #6D28D9;
+  --primary-light: #C4B5FD;
+  --primary-bg: #2E1065;
+
+  /* Background */
+  --background: #0F172A;
+  --background-secondary: #111827;
+  --sidebar: #0B1120;
+  --card: #1E293B;
+  --modal: #1F2937;
+
+  /* Border */
+  --border: #334155;
+  --border-light: #475569;
+  --border-focus: #8B5CF6;
+
+  /* Text */
+  --text: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-disabled: #64748B;
+
+  /* Status */
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+
+  /* Resource Categories */
+  --docs: #3B82F6;
+  --github: #64748B;
+  --youtube: #EF4444;
+  --article: #22C55E;
+  --notes: #F59E0B;
+  --snippet: #06B6D4;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.35);
+
+  /* Animation */
+  --transition: 0.25s ease;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* =====================================================
+   Base Reset
+===================================================== */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text);
+  min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* =====================================================
+   Global Elements
+===================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =====================================================
+   Selection
+===================================================== */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* =====================================================
+   Scrollbar
+===================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
